@@ -905,6 +905,10 @@ class Process(six.with_metaclass(ProcessMeta, Controller)):
                 if trait.output and not trait.input_filename:
                     return True
                 return value not in (Undefined, None, '')
+
+            if hasattr(trait,'array'): #Modif Ludo
+                return True
+
             return trait.output or value not in (Undefined, None)
 
         missing = []
