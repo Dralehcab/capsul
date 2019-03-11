@@ -16,6 +16,7 @@ import tempfile
 import os
 import shutil
 import six
+import numpy as np
 from soma.utils.weak_proxy import weak_proxy, get_ref
 
 # Define the logger
@@ -1465,6 +1466,12 @@ class Pipeline(Process):
                           and not isinstance(trait.trait_type, traits.Directory))
                          or len(plug.links_to) == 0):
                 continue
+            elif not isinstance(value, np.ndarray):
+                continue
+
+
+
+
             # check that it is really temporary: not exported
             # to the main pipeline
             if self.pipeline_node in [link[2]

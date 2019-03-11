@@ -505,6 +505,9 @@ class ProcessNode(Node):
         value: object (mandatory)
             the plug value we want to set
         """
+        print('Debug Value')
+        print(plug_name)
+        print(value)
         if value in ["", "<undefined>"]:
             value = Undefined
         elif is_trait_pathname(self.process.trait(plug_name)) and value is None:
