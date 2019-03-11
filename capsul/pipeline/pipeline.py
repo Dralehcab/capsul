@@ -1466,6 +1466,7 @@ class Pipeline(Process):
                           and not isinstance(trait.trait_type, traits.Directory))
                          or len(plug.links_to) == 0):
                 continue
+            #Modif Ludo
             elif not isinstance(value, np.ndarray):
                 continue
 
